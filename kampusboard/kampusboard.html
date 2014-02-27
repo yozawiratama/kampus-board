@@ -3,11 +3,9 @@
 </head>
 
 <body>
-  {{> hello}}
+  {{> tmp_header}}
+    <div id="BodyContent">
+        {{>tmp_landing}}
+    </div>
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
-</template>

@@ -1,0 +1,33 @@
+<template name="tmp_signinbar">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+            <li>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form" role="form"  id="login-nav">
+                            <div class="form-group">
+                                <label class="sr-only" for="inp_email_signin">Email address</label>
+                                <input type="email" class="form-control" id="inp_email_signin" placeholder="Email address" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="inp_pwd_signin">Password</label>
+                                <input type="password" class="form-control" id="inp_pwd_signin" placeholder="Password" required>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">Remember me
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+</template>
