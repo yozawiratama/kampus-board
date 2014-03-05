@@ -1,0 +1,86 @@
+<template name="tmp_modal_new_event">
+    <div class="modal fade" id="modalNewEvent" tabindex="-1" role="dialog" aria-labelledby="modalNewEventLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form-horizontal" role="form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="modalNewEventLabel">New Event</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="inpNewEvtName" type="text" class="form-control" placeholder="Event Name" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <select id="ddlNewEvtType" class="form-control">
+                                    <option selected disabled>Choose Type</option>
+                                    {{#each evt_type}}
+                                    <option value="{{Name}}">{{Name}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <select id="ddlNewEvtProv" class="form-control">
+                                    <option selected disabled>Choose Province</option>
+                                    {{#each province}}
+                                    <option value="{{Name}}">{{Name}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input id="inpNewEvtDueDate" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="tmp_modal_user_terms">
+    <div class="modal fade" id="modalUserSignInTerms" tabindex="-1" role="dialog" aria-labelledby="modalUserSignInTermsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="modalUserSignInTermsLabel">Terms and Agreement</h4>
+                </div>
+                <div class="modal-body">
+                    Terms Here
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="tmp_modal_ins_terms">
+    <div class="modal fade" id="modalInsSignInTerms" tabindex="-1" role="dialog" aria-labelledby="modalInsSignInTermsTermsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="modalInsSignInTermsTermsLabel">Terms and Agreement</h4>
+                </div>
+                <div class="modal-body">
+                    Terms Here
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

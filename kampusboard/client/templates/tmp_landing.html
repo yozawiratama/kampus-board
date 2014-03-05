@@ -1,5 +1,6 @@
 <template name="tmp_landing">
-<div class="container">
-    <h1>selamat datang di kampusboard.com</h1>
-</div>
+    <h1>Landing</h1>
+    {{#each active_events}}
+    {{> tmp_ctn_event_grid}}
+    {{/each}}
 </template>

@@ -1,0 +1,47 @@
+<template name="tmp_ctn_event_grid">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img data-src="holder.js/300x200" alt="...">
+            <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>...</p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">Button</a>
+                    <a href="#" class="btn btn-default" role="button">Button</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="tmp_ctn_event_list">
+    <tr>
+        <th>{{Name}}</th>
+        <th>{{Type}}</th>
+        <th>{{DueDate}}</th>
+        <th>
+        <div class="btn-group">
+                <button  type="button" class="btn btn-sm btn-default btn-open" >Open</button>
+                <button  type="button" class="btn btn-sm btn-default btn-edit">Edit</button>
+                <button  type="button" class="btn btn-sm btn-danger btn-delete">Delete</button>
+            </div>
+        </th>
+    </tr>
+</template>
+
+<template name="tmp_ctn_ins_list">
+    <tr>
+        <th>{{Name}}</th>
+        <th>{{Email}}</th>
+        <th>{{CPName}}</th>
+        <th>{{CPPhone}}</th>
+        <th>{{CreatedDate}}</th>
+        <th>
+            <div class="btn-group">
+                <button  type="button" class="btn btn-sm {{verify_color}} btn-verify" {{verify_disable}}>{{verify}}</button>
+                <button  type="button" class="btn btn-sm btn-default btn-edit">Edit</button>
+                <button  type="button" class="btn btn-sm btn-danger btn-delete">Delete</button>
+            </div>
+        </th>
+    </tr>
+</template>
