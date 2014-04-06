@@ -1,0 +1,15 @@
+<template name="tmp_events">
+    <div class="container">
+        <center class="marginTop10 marginBottom10">
+            <select id="selEvtTypeFilter">
+                <option value="all">All</option>
+                <option value="job">Job</option>
+                <option value="event">Event</option>
+                <option value="workshop">Workshop</option>
+                <option value="seminar">Seminar</option>
+                <option value="competition">Competition</option>
+            </select>
+        </center>
+        {{#each all_events}} {{>tmp_event}} {{/each}}
+    </div>
+</template>

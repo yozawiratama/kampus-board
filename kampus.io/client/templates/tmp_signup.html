@@ -1,0 +1,47 @@
+<template name="tmp_signup">
+    <div class="container">
+        <h3>Sign up</h3>
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <label for="inpSignupFor" class="control-label col-md-2">Sign up for</label>
+                <div class="col-md-4">
+                    <select id="inpSignupFor">
+                    <option  value="organization">Organization</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inpSignupName" class="control-label col-md-2">Name</label>
+                <div class="col-md-4">
+                    <input id="inpSignupName" type="text" class="form-control input-lg" placeholder="Enter name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inpSignupUsername" class="control-label col-md-2">Username</label>
+                <div class="col-md-4">
+                    <input id="inpSignupUsername" type="text" class="form-control input-lg" placeholder="Enter username" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inpSignupEmail" class="control-label col-md-2">Email address</label>
+                <div class="col-md-4">
+                    <input id="inpSignupEmail" type="email" class="form-control input-lg" placeholder="Enter email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inpSignupPwd" class="control-label col-md-2">Password</label>
+                <div class="col-md-4">
+                    <input id="inpSignupPwd" type="password" class="form-control input-lg" placeholder="Password" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inpSignupRePwd" class="control-label col-md-2">Confirm Password</label>
+                <div class="col-md-4">
+                    <input id="inpSignupRePwd" type="password" class="form-control input-lg" placeholder="Confirm Password" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default btn-lg col-md-offset-2">Sign up</button>
+        </form>
+    </div>
+
+</template>

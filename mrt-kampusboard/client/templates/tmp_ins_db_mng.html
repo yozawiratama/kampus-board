@@ -1,0 +1,23 @@
+<template name="tmp_ins_db_mng_event">
+    <h1>Event</h1>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalNewEvent"><i class="fa fa-plus"></i> New</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Due Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each event_items}} {{>tmp_ctn_event_list}} {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{>tmp_modal_new_event}}
+</template>

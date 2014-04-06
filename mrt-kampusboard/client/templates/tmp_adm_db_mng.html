@@ -1,0 +1,76 @@
+<template name="tmp_adm_db_mng_event">
+    <h1>Events</h1>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalNewEvent"><i class="fa fa-plus"></i> New</button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Time</th>
+                    <th>Created Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each event_items}} {{>tmp_ctn_event_list}} {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{>tmp_modal_new_event}}
+</template>
+
+<template name="tmp_adm_db_mng_ins">
+    <h1>Institutions</h1>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-body">
+<!--            <button class="btn btn-primary" data-toggle="modal" data-target="#modalNewEvent"><i class="fa fa-plus"></i> New</button>-->
+            
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact Person</th>
+                    <th>Phone</th>
+                    <th>Join Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each ins_items}} {{>tmp_ctn_ins_list}} {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<template name="tmp_adm_db_mng_member">
+    <h1>Members</h1>
+    <hr />
+    <div class="panel panel-default">
+        <div class="panel-body">
+<!--            <button class="btn btn-primary" data-toggle="modal" data-target="#modalNewEvent"><i class="fa fa-plus"></i> New</button>-->
+            
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact Person</th>
+                    <th>Phone</th>
+                    <th>Join Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each ins_items}} {{>tmp_ctn_ins_list}} {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>
+

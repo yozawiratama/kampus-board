@@ -1,0 +1,44 @@
+<template name="tmp_org">
+    <div class="container">
+        <div class="row marginTop10">
+            <div class="col-md-3">
+                <center>
+                    <img src="#" class="img-responsive" style="height:200px; width:200px" />
+                </center>
+            </div>
+            <div class="col-md-9">
+                <h2>
+                    <strong>
+                        <a id="orgName" href="#" data-type="text" data-title="Enter Organization Name" title="Organization Name">{{org_name}}</a>
+                    </strong>
+                </h2>
+                <p>
+                    <a id="orgDesc" href="#" data-type="text" data-title="Enter Organization Description">{{org_desc}}</a>
+                </p>
+                <p>
+                    <a id="orgAddr" href="#" data-type="text" data-title="Enter Organization Address">{{org_addr}}</a>
+                </p>
+                <p>
+                    <a id="orgCPName" href="#" data-type="text" data-title="Enter Organization Contact Person Name">{{org_cpname}}</a>-
+                    <a id="orgCPNumber" href="#" data-type="text" data-title="Enter Organization Contact Person Number">{{org_cpnumber}}</a>
+                </p>
+            </div>
+        </div>
+        <hr />
+        <center>
+            <center class="marginTop10 marginBottom10">
+                <select id="selEvtTypeFilter">
+                    <option value="all">All</option>
+                    <option value="job">Job</option>
+                    <option value="event">Event</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="seminar">Seminar</option>
+                    <option value="competition">Competition</option>
+                </select>
+            </center>
+        </center>
+        <div>
+            {{#each org_events}} {{>tmp_event}} {{/each}}
+        </div>
+    </div>
+</template>

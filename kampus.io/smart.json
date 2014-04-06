@@ -1,0 +1,12 @@
+{
+  "packages": {
+    "bootstrap-3": {},
+    "font-awesome": {},
+    "iron-router": {},
+    "iron-router-progress": {},
+    "bootstrap-select": {},
+    "x-editable-bootstrap3": {},
+    "bootstrap3-wysihtml5": {},
+    "bootstrap-growl": {}
+  }
+}

@@ -1,0 +1,17 @@
+<template name="tmp_new_event">
+    <div class="container">
+        <center class="marginTop10 marginBottom10">
+            <select id="selEvtTypeFilter">
+                <option value="job">Job</option>
+                <option value="event">Event</option>
+                <option value="workshop">Workshop</option>
+                <option value="seminar">Seminar</option>
+                <option value="competition">Competition</option>
+            </select>
+        </center>
+        <div>
+            {{#if isJob}} job {{/if}} {{#if isEvent}} event {{/if}} {{#if isWorkshop}} workshop {{/if}} {{#if isSeminar}} seminar {{/if}} {{#if isCompetition}} competition {{/if}}
+
+        </div>
+    </div>
+</template>

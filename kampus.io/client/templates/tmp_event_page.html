@@ -1,0 +1,32 @@
+<template name="tmp_event_page">
+    <div class="container">
+        <div class="row marginTop10">
+            <div class="col-md-3">
+                <center>
+                    <img src="#" class="img-responsive" style="height:200px; width:200px" />
+                </center>
+            </div>
+            <div class="col-md-9">
+                <h2>
+                    <strong>
+                        <a id="evtName" href="#" data-type="text" data-title="Enter Organization Name" title="Organization Name">{{evt_name}}</a>
+                    </strong>
+                </h2>
+                <p>
+                    Promoted By
+                    <a href="/org/{{promoter_username}}">{{evt_promoter}}</a>
+                </p>
+                <p>
+                    <a id="evtType" href="#" data-type="select" data-title="Enter Organization Address">{{evt_type}}</a>
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div id="divEvtContent">
+            {{#if loggedinAsPromoter}}
+            <textarea id="evtContentEditor" class="col-md-12" style="height:400px;"></textarea>
+            <button id="btnSaveEvtContent" class="btn btn-primary btn-lg marginTop10">Save</button>
+            {{/if}}
+        </div>
+    </div>
+</template>
