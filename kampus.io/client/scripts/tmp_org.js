@@ -4,10 +4,14 @@ Template.tmp_org.created = function () {
 Template.tmp_org.org_events = function () {
     if (Session.equals(SessionRef.Name.ActiveEventType, 'all'))
         return Events.find({
+            IsDeleted: false,
+            IsExpired: false,
             CreatedBy: Session.get(SessionRef.Name.OrgUn)
         });
     else
         return Events.find({
+            IsDeleted: false,
+            IsExpired: false,
             Type: Session.get(SessionRef.Name.ActiveEventType),
             CreatedBy: Session.get(SessionRef.Name.OrgUn)
         });

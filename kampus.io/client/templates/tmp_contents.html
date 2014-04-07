@@ -1,4 +1,4 @@
-<template name="tmp_event">
+<template name="tmp_event_item">
     <article class="col-sm-3 col-md-3 col-lg-3">
         <div class="profile">
             <img src="http://placehold.it/150x150" alt="..." class="img-responsive img-circle">
@@ -8,6 +8,9 @@
         </div>
         <ul class="list-group">
             <a href="/{{Unique}}"><li class="list-group-item">Open Page</li></a>
+            {{#if isPromoter}}
+            <a href="#"><li class="list-group-item">Delete</li></a>
+            {{/if}}
         </ul>
     </article>
 </template>

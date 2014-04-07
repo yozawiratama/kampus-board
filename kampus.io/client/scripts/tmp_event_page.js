@@ -2,6 +2,7 @@ Template.tmp_event_page.evt_name = function () {
     var event = Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
     });
+    console.log(event);
     return event && event.Name;
 };
 
@@ -18,6 +19,7 @@ Template.tmp_event_page.promoter_username = function () {
 };
 
 Template.tmp_event_page.evt_type = function () {
+    
     return Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
     }).Type;

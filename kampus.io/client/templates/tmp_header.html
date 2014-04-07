@@ -13,14 +13,13 @@
 
             <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    {{#if loggedin}} {{#if org}}
+                    {{#if loggedin}}
                     <li>
                         <a href="/org/{{org_name}}">Dashboard</a>
                     </li>
                     <li>
                         <a href="#" data-toggle="modal" data-target="#modalAddEvent">Add Event</a>
                     </li>
-                    {{/if}}
                     <li>
                         <a id="hplSignout" href="#">Sign Out</a>
                     </li>
@@ -35,5 +34,5 @@
 
     </nav>
 
-    {{#if org}} {{>tmp_modal_add_event}} {{/if}}
+    {{>tmp_modal_add_event}}
 </template>

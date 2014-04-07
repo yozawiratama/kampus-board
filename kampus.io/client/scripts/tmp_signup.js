@@ -1,11 +1,12 @@
-Template.tmp_signup.rendered = function(){
-$('#inpSignupFor').selectpicker();
+Template.tmp_signup.rendered = function () {
+    $('#inpSignupFor').selectpicker();
 };
 
 Template.tmp_signup.events({
     'submit': function (e) {
         e.preventDefault();
-        var suFor = $('#inpSignupFor').val();
+        $('#btnSignup').text('Signing Up ...');
+        $('#btnSignup').attr('disabled', true);
         var name = $('#inpSignupName').val();
         var un = $('#inpSignupUsername').val();
         var email = $('#inpSignupEmail').val();
@@ -13,16 +14,18 @@ Template.tmp_signup.events({
         var repwd = $('#inpSignupRePwd').val();
         if (pwd == repwd) {
             Accounts.createUser({
-                username : un,
+                username: un,
                 email: email,
                 password: pwd,
                 profile: {
-                    Name : name,
-                    Type: suFor
+                    Name: name,
                 }
             }, function (err) {
-                if (err) alert("Fail");
-                else Router.go("/");
+                if (err) {
+                    $('#btnSignup').attr('disabled', false);
+                    $('#btnSignup').text('Sign Up');
+                    alert("Fail");
+                } else Router.go("/");
             });
         }
     }

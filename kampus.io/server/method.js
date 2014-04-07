@@ -53,12 +53,22 @@ Meteor.methods({
 
 Meteor.methods({
     EventCreate: function (name, unique, type, username, promoterName) {
+        var now = new Date();
+        var expireDate;
+        if (now.getMonth() == 11) {
+            expireDate = new Date(now.getFullYear() + 1, 3, now.getDate());
+        } else {
+            expireDate = new Date(now.getFullYear(), now.getMonth() + 3, now.getDate());
+        }
         Events.insert({
             Name: name,
             Unique: unique,
             Type: type,
             Promoter: promoterName,
-            CreatedBy: username
+            CreatedBy: username,
+            ExpireDate: expireDate,
+            IsDeleted: false,
+            IsExpired: false
         });
     },
     EventUniqueCheck: function (unique) {
@@ -83,6 +93,16 @@ Meteor.methods({
         }, {
             $set: {
                 Content: content
+            }
+        });
+    },
+    EventSetDelete: function (unique) {
+        Events.update({
+            Unique: unique
+        }, {
+            $set: {
+                Unique: "",
+                IsDeleted: true
             }
         });
     }
