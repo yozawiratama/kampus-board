@@ -2,42 +2,67 @@ Template.tmp_event_page.evt_name = function () {
     var event = Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
     });
-    console.log(event);
     return event && event.Name;
 };
 
 Template.tmp_event_page.evt_promoter = function () {
-    return Events.findOne({
+    var event = Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
-    }).Promoter;
+    });
+    return event && event.Promoter;
 };
 
 Template.tmp_event_page.promoter_username = function () {
-    return Events.findOne({
+    var event = Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
-    }).CreatedBy;
+    });
+    return event && event.CreatedBy;
 };
 
 Template.tmp_event_page.evt_type = function () {
-    
-    return Events.findOne({
+    var event = Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
-    }).Type;
+    });
+    return event && event.Type;
+};
+
+Template.tmp_event_page.sameEvents = function () {
+    var event = Events.findOne({
+        Unique: Session.get(SessionRef.Name.EventUnique)
+    });
+    if (event)
+        return Events.find({
+            IsDeleted: false,
+            IsExpired: false,
+            Type: event.Type
+        }, {
+            limit: 4
+        });
+};
+
+Template.tmp_event_page.profpic = function () {
+    var event = Events.findOne({
+        Unique: Session.get(SessionRef.Name.EventUnique)
+    });
+    if (event) {
+        return event.Picture;
+    }
 };
 
 Template.tmp_event_page.loggedinAsPromoter = function () {
     var event = Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
     });
-    if (Meteor.user())
+    if (Meteor.userId()) {
         if (event.CreatedBy == Meteor.user().username) return true;
+    }
 };
 
 Template.tmp_event_page.rendered = function () {
     var evt = Events.findOne({
         Unique: Session.get(SessionRef.Name.EventUnique)
     });
-    if (Meteor.user()) {
+    if (Meteor.userId()) {
         if (evt.CreatedBy == Meteor.user().username) {
 
             $('#evtContentEditor').wysihtml5();
@@ -77,9 +102,10 @@ Template.tmp_event_page.rendered = function () {
 
         }
     } else {
-        console.log(evt);
         $('#divEvtContent').html(evt.Content);
+        $('img').addClass('img-responsive');
     }
+
 };
 
 Template.tmp_event_page.events({
@@ -90,5 +116,25 @@ Template.tmp_event_page.events({
                 $('#btnSaveEvtContent').text("saved");
             }
         });
+    },
+    'click #imgProfpic': function (e) {
+        e.preventDefault();
+        var event = Events.findOne({
+            Unique: Session.get(SessionRef.Name.EventUnique)
+        });
+        if (Meteor.userId()) {
+            if (event.CreatedBy == Meteor.user().username) {
+                bootbox.prompt("Insert Image Link", function (result) {
+                    if (result === null) {} else {
+                        Meteor.call('EventSetPicture', Session.get(SessionRef.Name.EventUnique), result, function (err, res) {
+                            if (err) {
+                                $.bootstrapgrowl('error');
+                            }
+                        });
+                    }
+                });
+            }
+        }
+
     }
 });

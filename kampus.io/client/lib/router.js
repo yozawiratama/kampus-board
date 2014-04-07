@@ -43,6 +43,9 @@ Router.map(function () {
     this.route('event_page', {
         path: '/:evt_unique',
         template: 'tmp_event_page',
+        waitOn: function () {
+            return Meteor.subscribe('events');
+        },
         onAfterAction: function () {
             Session.set(SessionRef.Name.EventUnique, this.params.evt_unique);
         }
@@ -51,9 +54,12 @@ Router.map(function () {
     this.route('org_page', {
         path: '/org/:org_un',
         template: 'tmp_org',
+        waitOn: function () {
+            return Meteor.subscribe('organization', this.params.org_un);
+        },
         onBeforeAction: function () {
             Session.set(SessionRef.Name.OrgUn, this.params.org_un);
-            
+
         },
         onAfterAction: function () {
 
@@ -63,7 +69,7 @@ Router.map(function () {
         path: '/new/event',
         template: 'tmp_new_event',
         onBeforeAction: function () {
-            
+
         },
         onAfterAction: function () {
 

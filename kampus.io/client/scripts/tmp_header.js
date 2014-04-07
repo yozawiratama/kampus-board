@@ -3,7 +3,8 @@ Template.tmp_header.loggedin = function () {
 };
 
 Template.tmp_header.org_name = function () {
-    return Meteor.user().username;
+    if (Meteor.userId())
+        return Meteor.user().username;
 };
 
 
@@ -12,8 +13,7 @@ Template.tmp_header.events({
     'click #hplSignout': function (e) {
         e.preventDefault();
         Meteor.logout(function (err) {
-            if (err){}
-            else {
+            if (err) {} else {
                 Router.go("/");
             }
         });

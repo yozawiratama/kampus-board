@@ -28,6 +28,9 @@
       },
       "bootstrap3-datepicker": {
         "version": "0.2.0"
+      },
+      "bootboxjs": {
+        "version": "4.2.0"
       }
     },
     "packages": {
@@ -75,6 +78,11 @@
         "git": "https://github.com/rajit/bootstrap3-datepicker.git",
         "tag": "v0.2.0",
         "commit": "e773c83065de04af77e95cf9b8f4d10d44615cb6"
+      },
+      "bootboxjs": {
+        "git": "https://github.com/TimHeckel/meteor-bootboxjs.git",
+        "tag": "v4.2.0",
+        "commit": "2b7d18ad028d9e7b37238ecf2a8a7970735cebd1"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

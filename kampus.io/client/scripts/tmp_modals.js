@@ -10,18 +10,28 @@ Template.tmp_modal_add_event.events({
         var unique = $.trim($('#inpEvtUnique').val());
         if (name != "" && type != "" && unique != "") {
             if (!hasSpace(unique)) {
+
                 Meteor.call('EventUniqueCheck', unique, function (err, res) {
                     if (err) {
 
                     } else {
-                        Meteor.call('EventCreate', name, unique, type, Meteor.user().username, Meteor.user().profile.Name, function (err, res) {
-                            if (err) {} else {
-                                $('#modalAddEvent').modal('hide');
-                                Router.go('/' + unique);
-                            }
-                        });
+                        if (Meteor.userId()) {
+                            Meteor.call('EventCreate', name, unique, type, Meteor.user().username, Meteor.user().profile.Name, function (err, res) {
+                                if (err) {} else {
+                                    $('#modalAddEvent').modal('hide');
+                                    Router.go('/' + unique);
+                                }
+                            });
+                        } else {
+                            $.bootstrapGrowl("We detect no sign in, please sign in.", {
+                                type: 'danger'
+                            });
+                            $('#modalAddEvent').modal('hide');
+                            Router.go('/signin/'+name+'/'+unique+'/'+type);
+                        }
                     }
                 });
+
             } else {
                 alert("unique may not have space");
             }

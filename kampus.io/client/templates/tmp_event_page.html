@@ -3,7 +3,7 @@
         <div class="row marginTop10">
             <div class="col-md-3">
                 <center>
-                    <img src="#" class="img-responsive" style="height:200px; width:200px" />
+                    <img id="imgProfpic" src="{{profpic}}" class="img-responsive" style="height:200px; width:200px" />
                 </center>
             </div>
             <div class="col-md-9">
@@ -28,5 +28,11 @@
             <button id="btnSaveEvtContent" class="btn btn-primary btn-lg marginTop10">Save</button>
             {{/if}}
         </div>
+        <hr />
+        <div class="row">
+            {{#each sameEvents}}{{>tmp_event_item}} {{/each}}
+        </div>
+
+        <hr />
     </div>
 </template>

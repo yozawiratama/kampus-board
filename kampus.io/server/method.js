@@ -44,6 +44,24 @@ Meteor.methods({
             }
         });
     },
+    OrgSetTwitter: function (userid, twitId) {
+        Meteor.users.update({
+            _id: userid
+        }, {
+            $set: {
+                "profile.Twitter": twitId
+            }
+        });
+    },
+    OrgSetPicture: function (userid, url) {
+        Meteor.users.update({
+            _id: userid
+        }, {
+            $set: {
+                "profile.Picture": url
+            }
+        });
+    },
     OrgGetNamebyUsername: function (un) {
         return Meteor.users.findOne({
             username: un
@@ -64,6 +82,7 @@ Meteor.methods({
             Name: name,
             Unique: unique,
             Type: type,
+            Picture : "http://placehold.it/150x150",
             Promoter: promoterName,
             CreatedBy: username,
             ExpireDate: expireDate,
@@ -93,6 +112,15 @@ Meteor.methods({
         }, {
             $set: {
                 Content: content
+            }
+        });
+    },
+    EventSetPicture: function (unique, url) {
+        Events.update({
+            Unique: unique
+        }, {
+            $set: {
+                Picture: url
             }
         });
     },

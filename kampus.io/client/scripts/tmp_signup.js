@@ -19,6 +19,7 @@ Template.tmp_signup.events({
                 password: pwd,
                 profile: {
                     Name: name,
+                    Picture : "http://placehold.it/150x150"
                 }
             }, function (err) {
                 if (err) {

@@ -3,10 +3,11 @@
         <div class="row marginTop10">
             <div class="col-md-3">
                 <center>
-                    <img src="#" class="img-responsive" style="height:200px; width:200px" />
+                    <img id="imgProfPic" class="img-responsive" src="{{profpic}}" style="height:200px; width:200px" />
                 </center>
             </div>
             <div class="col-md-9">
+
                 <h2>
                     <strong>
                         <a id="orgName" href="#" data-type="text" data-title="Enter Organization Name" title="Organization Name">{{org_name}}</a>
@@ -19,8 +20,11 @@
                     <a id="orgAddr" href="#" data-type="text" data-title="Enter Organization Address">{{org_addr}}</a>
                 </p>
                 <p>
-                    <a id="orgCPName" href="#" data-type="text" data-title="Enter Organization Contact Person Name">{{org_cpname}}</a>-
+                    <a id="orgCPName" href="#" data-type="text" data-title="Enter Organization Contact Person Name">{{org_cpname}}</a>
                     <a id="orgCPNumber" href="#" data-type="text" data-title="Enter Organization Contact Person Number">{{org_cpnumber}}</a>
+                </p>
+                <p>
+                    <i class="fa fa-twitter"></i> @<a id="orgTwitter" href="http://twitter.com/{{org_twitter}}" data-type="text" data-title="Enter Twitter ID">{{org_twitter}}</a>
                 </p>
             </div>
         </div>
